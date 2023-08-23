@@ -1,17 +1,15 @@
-import React from "react";
-import Title from "./Title";
-import Author from "./Author";
-import Image from "./Image";
-
-
-const Book = () => {
+export const Book = ({ author, img, title, getbook, id }) => {
+    // const getSingleBook = () => {
+    //     getbook(id);
+    // };
     return (
         <div className="book">
-            <Image />
-            <Title />
-            <Author />
+            <img style={{ height: "70%" }} src={img} alt={title} />
+            <h2>{title}</h2>
+            <h4>{author}</h4>
+            {/* <button onClick={getSingleBook}>click me</button> */}
+            {/* <button onClick={() => getbook(id)}>click me</button> */}
         </div>
     );
 };
 
-export default Book;

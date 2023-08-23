@@ -1,41 +1,50 @@
 import React from "react";
-// import Book from "./Book";
-const books = [
-    {
-        author: "Lucie Hemmen.",
-        img: "https://m.media-amazon.com/images/I/81ztZ7gW2ML._AC_UL320_.jpg",
-        title: "The Teen Girl's Anxiety Survival Guide.",
-    },
-    {
-        author: "Colleen Hoover.",
-        img: "https://m.media-amazon.com/images/I/81s0B6NYXML._AC_UL320_.jpg",
-        title: "It ends with us.",
-    },
-    {
-        author: "Max Lucado.",
-        img: "https://m.media-amazon.com/images/I/4148hBPzTyL._SY291_BO1,204,203,200_QL40_FMwebp_.jpg",
-        title: "God Will Use This for Good: Surviving the Mess of Life",
-    },
-];
+import { books } from "../books";
+import { Book } from "../Book";
 
 const BookList = () => {
+    const getBook = (id) => {
+        const book = books.find((book) => book.id === id);
+        alert(`${book.title} clicked!`);
+    };
     return (
         <div className="booklist">
+            {/* <EventExamples /> */}
             {books.map((book) => {
-                return <Book {...book} />;
+                return <Book {...book} key={book.id} getbook={getBook} />;
             })}
         </div>
     );
 };
 
-const Book = ({author, img, title}) => {
-    // const { img, title, author } = props.book;
+const EventExamples = () => {
+    const handleFormInput = () => {
+        alert("Form edited..");
+    };
+    const handleButtonClick = () => {
+        alert("Button clicked...");
+    };
+    const handleFormSubmit = (e) => {
+        e.preventDefault();
+        alert("form submitted");
+    };
     return (
-        <div className="book">
-            <img style={{ height: "70%" }} src={img} alt={title} />
-            <h2>{title}</h2>
-            <h4>{author}</h4>
-        </div>
+        <section>
+            <h2>Typical form</h2>
+            <form onSubmit={handleFormSubmit} action="">
+                <input
+                    type="text"
+                    onChange={handleFormInput}
+                    name=""
+                    id=""
+                    style={{ margin: "1rem 0" }}
+                />
+                <button type="submit" onClick={handleButtonClick}>
+                    click me
+                </button>
+            </form>
+        </section>
     );
 };
+
 export default BookList;
