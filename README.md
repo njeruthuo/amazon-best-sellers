@@ -1,3 +1,6 @@
+## Check out the live project:
+[https://njeruthuo-amazon-best-sellers.netlify.app/](https://njeruthuo-amazon-best-sellers.netlify.app/)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
