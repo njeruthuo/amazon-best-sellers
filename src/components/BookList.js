@@ -10,8 +10,8 @@ const BookList = () => {
     return (
         <div className="booklist">
             {/* <EventExamples /> */}
-            {books.map((book) => {
-                return <Book {...book} key={book.id} getbook={getBook} />;
+            {books.map((book, index) => {
+                return <Book {...book} key={book.id} getbook={getBook} number={index} />;
             })}
         </div>
     );

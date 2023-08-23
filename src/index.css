@@ -27,6 +27,7 @@ body {
 }
 
 .book{
+    position: relative;
     background-color: #fff;
     border-radius: 1rem;
     padding: 2rem;
@@ -36,4 +37,17 @@ body {
 .book img {
     object-fit: cover;
     width: 100%;
+}
+
+span{
+    position: absolute;
+    /* margin: 0.75rem; */
+    top: 0;
+    left: 0;
+    background-color: red;
+    padding: 0.5rem 1rem;
+    color: white;
+    font-size: 1rem;
+    border-top-left-radius: 0.75rem;
+    border-bottom-right-radius: 0.75rem;
 }
